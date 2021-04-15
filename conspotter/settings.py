@@ -27,7 +27,7 @@ SECRET_KEY = '59l2bjl8o)6r^=4d$&=87e=)1#t!&1f_&f*(do97@@+ina#a4#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','con-spotter.web.app']
 
 
 # Application definition
