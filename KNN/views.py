@@ -303,17 +303,13 @@ def build_model_train_test(model,x_train,x_test,y_train,y_test):
     gs = gridspec.GridSpec(1,2)
 
     ax1 = plt.subplot(gs[0])
-    cnf_matrix = confusion_matrix(y_train,y_pred)
-    row_sum = cnf_matrix.sum(axis=1,keepdims=True)
-    cnf_matrix_norm =cnf_matrix / row_sum
-    sns.heatmap(cnf_matrix_norm,cmap='YlGnBu',annot=True)
+    cnf_matrix = confusion_matrix(y_train,y_pred,normalize='all')
+    sns.heatmap(cnf_matrix,cmap='YlGnBu',annot=True)
     plt.title("Normalized Confusion Matrix - Train Data")
 
     ax3 = plt.subplot(gs[1])
-    cnf_matrix = confusion_matrix(y_test,y_pred_test)
-    row_sum = cnf_matrix.sum(axis=1,keepdims=True)
-    cnf_matrix_norm =cnf_matrix / row_sum
-    sns.heatmap(cnf_matrix_norm,cmap='YlGnBu',annot=True)
+    cnf_matrix = confusion_matrix(y_test,y_pred_test,normalize='all')
+    sns.heatmap(cnf_matrix,cmap='YlGnBu',annot=True)
     plt.title("Normalized Confusion Matrix - Test Data")
 
     # plt.close()
