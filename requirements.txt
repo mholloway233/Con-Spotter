@@ -198,9 +198,6 @@ python-telegram-bot==13.1
 PyTweening==1.0.3
 pytz==2019.3
 PyWavelets==1.1.1
-pywin32==300
-pywin32-ctypes==0.2.0
-pywinpty==0.5.7
 PyYAML==5.3.1
 pyzmq==22.0.3
 queuelib==1.5.0
