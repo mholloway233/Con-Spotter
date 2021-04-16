@@ -133,7 +133,6 @@ STATICFILES_DIRS = (
 )
 
 
-django_heroku.settings(locals())
 
 CONFIG = {
     "apiKey": "AIzaSyD9kyifI27SA7nT4zwHeCewFeiNSZ1dXdI",
@@ -145,3 +144,4 @@ CONFIG = {
     "appId": "1:251669384282:web:c807a8af700d1581795c63",
     "measurementId": "G-6YJY0FHLKC"
   }
+django_heroku.settings(locals())

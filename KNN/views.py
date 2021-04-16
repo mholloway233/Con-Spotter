@@ -36,6 +36,9 @@ warnings.filterwarnings('ignore')
 import random
 random.seed(0)
 
+def home(request):
+    return JsonResponse({"API":"V1"},status=200)
+
 def knn(request):
     cc_dataset = pd.read_csv(URL)
     cc_dataset.shape
