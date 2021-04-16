@@ -1,4 +1,17 @@
 
+git remote -v 
+heroku  https://git.heroku.com/conspotterapi.git (fetch)
+heroku  https://git.heroku.com/conspotterapi.git (push)
+origin  https://github.com/mholloway233/conspotterAPI.git (fetch)
+origin  https://github.com/mholloway233/conspotterAPI.git (push)
+
+	if not seen then
+	heroku git : remote -a conspotterapi
+
+	git pull heroku master
+
+
+****************************************
 git add .
 git commit -m "messgae"
 git push origin master
