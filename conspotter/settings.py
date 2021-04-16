@@ -27,8 +27,13 @@ SECRET_KEY = '59l2bjl8o)6r^=4d$&=87e=)1#t!&1f_&f*(do97@@+ina#a4#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*','con-spotter.web.app']
-
+ALLOWED_HOSTS = ['*','con-spotter.web.app','localhost:3000']
+CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_WHITELIST = ['http://localhost:3000',]
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     'http://localhost:3030',
+# ]
 
 # Application definition
 
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'KNN.apps.KnnConfig',
     'django_heroku',    
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'conspotter.urls'
