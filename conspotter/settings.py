@@ -146,3 +146,5 @@ CONFIG = {
     "measurementId": "G-6YJY0FHLKC"
   }
 django_heroku.settings(locals())
+
+# web waitress-serve --port=$PORT conspotter.wsgi:application

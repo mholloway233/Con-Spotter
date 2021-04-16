@@ -1,1 +1,1 @@
-web waitress-serve --port=$PORT conspotter.wsgi:application
+web: gunicorn mysite.wsgi --log-file -
