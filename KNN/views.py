@@ -177,7 +177,7 @@ def rforest(request):
     plt.close()
     storage.child("rnd_clf.png").put("rnd_clf.png")
     rnd_clf_URL = storage.child("rnd_clf.png").get_url(None)
-    
+
 
     return JsonResponse({"success":True,"Fd_Nl_URL":Fd_Nl_URL,"rnd_clf_URL":rnd_clf_URL},status=200)
 
@@ -255,7 +255,7 @@ def conef(request):
     ada_clf_URL = storage.child("ada_clf.png").get_url(None)
 
     soft_voting_clf = VotingClassifier(
-        estimators=[('rf', rnd_clf), ('ada', ada_clf), ('knn',knn_clf)], 
+        estimators=[('rf', rnd_clf), ('ada', ada_clf), ('knn',knn_clf)],
         voting='soft')
 
     build_model_train_test(soft_voting_clf,x_train,x_test,y_train,y_test)
@@ -328,14 +328,14 @@ def SelectThresholdByCV(probs,y):
     best_precision = 0
     precisions=[]
     recalls=[]
-    
+
     thresholds = np.arange(0.0,1.0,0.001)
     for threshold in thresholds:
         predictions = (probs > threshold)
         f = f1_score(y, predictions)
         precision = precision_score(y, predictions)
         recall = recall_score(y, predictions)
-        
+
         if f > best_f1:
             best_f1 = f
             best_precision = precision
